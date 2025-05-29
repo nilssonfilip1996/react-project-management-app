@@ -1,12 +1,15 @@
+import Content from "./components/Content";
 import Sidebar from "./components/Sidebar";
 
 function App() {
   return (
     <>
-      <h1 className="my-8 text-center text-5xl font-bold">Hello World</h1>
-      <div className="flex flex-row">
-        <div className="basis-1/3">
+      <div className="flex flex-row mt-36">
+        <div className="basis-1/4">
           <Sidebar/>
+        </div>
+        <div className="basis-3/5">
+          <Content/>
         </div>
       </div>
     </>
