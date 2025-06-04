@@ -29,6 +29,8 @@ export default function Content({chosenProject, defaultView="fallback", handleSa
                 return getFallbackView(setContentView);
             case "newProject":
                 return <NewProject handleCancel={handleCancel} handleSave={handleSave}/>
+            case "viewProject":
+                return <></>
             default:
                 return <div><p>Error</p></div>;
         }

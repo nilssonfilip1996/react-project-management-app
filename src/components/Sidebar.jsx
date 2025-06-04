@@ -1,13 +1,14 @@
-export default function Sidebar({ projectNames }) {
+export default function Sidebar({ projectNames, handleViewProject }) {
   function handleClick(e) {
-    console.log(e.target.textContent);
+    //console.log(e.target.textContent);
+    handleViewProject(e.target.textContent);
   }
 
   function createProjectList() {
     return (
       <ul>
         {projectNames.map((projectName) => (
-          <li className="my-1">
+          <li key={projectName} className="my-1">
             <button className="active:bg-violet-700" onClick={handleClick}>
               {projectName}
             </button>
