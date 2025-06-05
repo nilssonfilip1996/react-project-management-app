@@ -1,5 +1,4 @@
 
-
 export default function NewProject({handleCancel, handleSave}) {
     function handleSubmit(formData) {
         const formattedFormData = {title: formData.get("title"), description: formData.get("description"), dueDate: formData.get("dueDate")};
