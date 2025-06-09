@@ -1,23 +1,13 @@
-import { useState } from "react";
-
 import NewProject from "./NewProject";
 import Fallback from "./Fallback";
+import ProjectDetail from "./projectDetail/ProjectDetail";
 
 
-export default function Content({chosenProject, defaultView="fallback", handleSave}) {
-    const [contentView, setContentView] = useState(defaultView);
+export default function Content({handleSave, handleCancel, handleStartNewProject, manageTask, contentView, chosenProject}) {
     console.log(contentView);
     
-    function handleCancel() {
-        setContentView("fallback");
-    }
-
-    function handleStartNewProject(){
-        setContentView("newProject");
-    }
     console.log("rerender");
     
-
     function getView() {
         switch (contentView) {
             case "fallback":
@@ -25,15 +15,16 @@ export default function Content({chosenProject, defaultView="fallback", handleSa
             case "newProject":
                 return <NewProject handleCancel={handleCancel} handleSave={handleSave}/>
             case "viewProject":
-                return <></>
+                return <ProjectDetail project={chosenProject} manageTask={manageTask}/>
             default:
                 return <div><p>Error</p></div>;
         }
     }
     
-    const view = getView();
+    //const view = getView();
 
     return (
-        view
+        //view
+        getView()
     )
 }
