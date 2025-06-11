@@ -62,9 +62,13 @@ function App() {
   }
 
   return (
-    <>
-      <div className="flex flex-row my-36">
-        <div className="basis-1/4">
+    <div className="flex flex-col h-screen justify-center">
+      <div className="flex flex-row justify-center mb-6">
+        <h1 className="text-center text-4xl basis-3/5 py-4 bg-stone-900 text-stone-200 rounded-3xl">Project Management App</h1>
+      </div>
+      
+      <div className="flex flex-row justify-center">
+        <div className="basis-1/5">
           <Sidebar
             projectNames={Object.keys(projects)}
             handleViewProject={viewProject}
@@ -83,7 +87,10 @@ function App() {
           />
         </div>
       </div>
-    </>
+      <div className="flex flex-row justify-center mt-6">
+        <h1 className="text-center basis-3/5 py-2 bg-stone-900 text-stone-200 rounded-3xl">Made {new Date().getFullYear()} by Filip</h1>
+      </div>
+    </div>
   );
 }
 

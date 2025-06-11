@@ -5,7 +5,7 @@ export default function NewProject({handleCancel, handleSave}) {
         handleSave(formattedFormData);
     }
     return (
-        <form className="flex flex-col ms-20 pb-10" action={handleSubmit}>
+        <form className="flex flex-col pb-10" action={handleSubmit}>
             <div className="flex flex-row-reverse gap-4">
                 <button className="w-fit px-3 py-2 text-lg rounded-xl bg-stone-900 hover:bg-stone-400 text-stone-200" type="submit">Save</button>
                 <button className="w-fit px-3 py-2 text-lg rounded-xl bg-stone-100 hover:bg-stone-400 text-stone-900" onClick={handleCancel}>Cancel</button>

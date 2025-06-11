@@ -24,7 +24,8 @@ export default function Content({handleSave, handleCancel, handleStartNewProject
     //const view = getView();
 
     return (
-        //view
-        getView()
+        <div className="p-6">
+            {getView()}
+        </div>
     )
 }

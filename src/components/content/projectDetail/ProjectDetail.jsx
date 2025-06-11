@@ -7,7 +7,7 @@ export default function ProjectDetail({project, handleDeleteProject, manageTask,
     }
 
     return (
-        <div className="mx-4">
+        <div className="">
             <div className="flex flex-col gap-4">
                 <div className="flex flex-row justify-between align-middle">
                     <h1 className="font-semibold text-4xl text-stone-600">{project.title}</h1>
