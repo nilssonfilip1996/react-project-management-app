@@ -1,0 +1,31 @@
+import { forwardRef, useImperativeHandle, useRef } from "react"
+
+const DeleteModal = forwardRef(function DeleteModal({projectName, handleDelete}, ref) {
+    const dialog = useRef();
+
+    useImperativeHandle(ref, () =>{
+        return {
+            open() {
+                dialog.current.showModal();
+            }
+        }
+    });
+
+    return (
+        <div>
+            <dialog ref={dialog}>
+                <div className="fixed inset-0 grid place-content-center bg-black/90">
+                    <div className="w-full max-w-lg bg-white p-4 shadow-lg rounded-lg">
+                        <h2>Are you sure that you want to delete the project <span className="text-xl font-bold">{projectName}</span>?</h2>
+                        <div className="flex flex-row justify-center mt-4 gap-4">
+                            <button className="px-2 text-stone-800 bg-red-200 rounded-md" onClick={handleDelete}>Yes</button>
+                            <button className="px-2 text-stone-800 bg-green-200 rounded-md" onClick={() => dialog.current.close()}>No</button>
+                        </div>
+                    </div>
+                </div>
+            </dialog>
+        </div>
+    )
+});
+
+export default DeleteModal;
