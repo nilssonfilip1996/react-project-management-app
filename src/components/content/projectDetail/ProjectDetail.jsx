@@ -15,7 +15,7 @@ export default function ProjectDetail({project, handleDeleteProject, manageTask}
             <div className="flex flex-col gap-4">
                 <div className="flex flex-row justify-between align-middle">
                     <h1 className="font-semibold text-4xl text-stone-600">{project.title}</h1>
-                    <button className="px-2 text-stone-800 bg-red-200 hover:bg-red-400 rounded-md" onClick={()=>dialog.current.open()} >Delete</button>
+                    <button className="px-2 py-3 h-fit my-auto text-stone-800 bg-red-200 hover:bg-red-400 rounded-md" onClick={()=>dialog.current.open()} >Delete</button>
                 </div>
                 <p className="text-stone-400">{project.dueDate}</p>
                 <p className="text-stone-600">{project.description}</p>

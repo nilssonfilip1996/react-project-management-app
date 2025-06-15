@@ -8,8 +8,8 @@ export default function Sidebar({ projectNames, handleViewProject, handleStartNe
     return (
       <ul>
         {projectNames.map((projectName) => (
-          <li key={projectName} className="my-1">
-            <button className="active:bg-violet-700" onClick={handleClick}>
+          <li key={projectName} className="mb-4 border-l-2">
+            <button className="hover:bg-stone-600 rounded-lg ms-2 px-2" onClick={handleClick}>
               {projectName}
             </button>
           </li>
