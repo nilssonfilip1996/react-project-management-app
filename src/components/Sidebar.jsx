@@ -1,15 +1,20 @@
-export default function Sidebar({ projectNames, handleViewProject, handleStartNewProject }) {
+export default function Sidebar({ projectNames, chosenProjectTitle, handleViewProject, handleStartNewProject }) {
   function handleClick(e) {
     //console.log(e.target.textContent);
     handleViewProject(e.target.textContent);
   }
 
   function createProjectList() {
+    console.log("---");
+    console.log(chosenProjectTitle);
+    console.log("---");
+    
+    
     return (
       <ul>
         {projectNames.map((projectName) => (
-          <li key={projectName} className="mb-4 border-l-2">
-            <button className="hover:bg-stone-600 rounded-lg ms-2 px-2" onClick={handleClick}>
+          <li key={projectName} className={projectName===chosenProjectTitle?"mb-4 border-x-4 px-2":"mb-4"}>
+            <button className="hover:bg-stone-600 rounded-lg px-2" onClick={handleClick}>
               {projectName}
             </button>
           </li>

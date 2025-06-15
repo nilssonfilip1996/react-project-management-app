@@ -27,7 +27,7 @@ export default function Tasks({taskList, manageTask}) {
             <ul className="list-disc bg-stone-200 py-2 ps-8 pe-3 rounded-md">
                 {taskList.map((task, index) => (
                 <li key={index} className="my-1">
-                    <div className="flex flex-row justify-between align-bottom p-x ps-2 hover:bg-stone-300 rounded-md">
+                    <div className="flex flex-row justify-between align-bottom ps-2 hover:bg-stone-300 rounded-md">
                         <p className="h-fit my-auto">{task}</p>
                         <button className="p-2 hover:bg-red-400 rounded-md" onClick={()=> handleDeleteTask(task)}>Clear</button>
                     </div>

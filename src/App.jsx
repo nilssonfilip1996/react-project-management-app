@@ -70,7 +70,7 @@ function App() {
       <div className="flex flex-row justify-center">
         <div className="basis-1/5">
           <Sidebar
-            projectNames={Object.keys(projects)}
+            projectNames={Object.keys(projects)} chosenProjectTitle={chosenProject?chosenProject.title:null}
             handleViewProject={viewProject}
             handleStartNewProject={handleStartNewProject}
           />
