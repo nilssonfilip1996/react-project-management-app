@@ -3,7 +3,7 @@ import Fallback from "./Fallback";
 import ProjectDetail from "./projectDetail/ProjectDetail";
 
 
-export default function Content({handleSave, handleCancel, handleStartNewProject, handleDeleteProject, manageTask, contentView, chosenProject}) {
+export default function Content({onAddProject, onCancel, onStartNewProject, onDeleteProject, manageTask, contentView, chosenProject}) {
     console.log(contentView);
     
     console.log("rerender");
@@ -11,11 +11,11 @@ export default function Content({handleSave, handleCancel, handleStartNewProject
     function getView() {
         switch (contentView) {
             case "fallback":
-                return <Fallback handleStartProjectButton={handleStartNewProject}/>
+                return <Fallback onStartProjectButton={onStartNewProject}/>
             case "newProject":
-                return <NewProject handleCancel={handleCancel} handleSave={handleSave}/>
+                return <NewProject onCancel={onCancel} onAddProject={onAddProject}/>
             case "viewProject":
-                return <ProjectDetail project={chosenProject} handleDeleteProject={handleDeleteProject} manageTask={manageTask}/>
+                return <ProjectDetail project={chosenProject} onDeleteProject={onDeleteProject} manageTask={manageTask}/>
             default:
                 return <div><p>Error</p></div>;
         }

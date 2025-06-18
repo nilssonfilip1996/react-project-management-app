@@ -8,7 +8,7 @@ function App() {
   const [chosenProject, setChosenProject] = useState(null);
   const [contentView, setContentView] = useState("fallback");
 
-  function addNewProject({ title, description, dueDate }) {
+  function handleAddNewProject({ title, description, dueDate }) {
     setProjects((prevProjects) => ({
       ...prevProjects,
       [title]: {
@@ -22,7 +22,7 @@ function App() {
     setContentView("fallback");
   }
 
-  function viewProject(projectName) {
+  function handleViewProject(projectName) {
     setChosenProject(projects[projectName]);
     setContentView("viewProject");
   }
@@ -62,7 +62,7 @@ function App() {
   }
 
   return (
-    <div className="flex flex-col h-screen justify-center">
+    <main className="flex flex-col h-screen justify-center">
       <div className="flex flex-row justify-center mb-6">
         <h1 className="text-center text-4xl basis-3/5 py-4 bg-stone-900 text-stone-200 rounded-3xl">Project Management App</h1>
       </div>
@@ -71,16 +71,16 @@ function App() {
         <div className="basis-1/5">
           <Sidebar
             projectNames={Object.keys(projects)} chosenProjectTitle={chosenProject?chosenProject.title:null}
-            handleViewProject={viewProject}
-            handleStartNewProject={handleStartNewProject}
+            onViewProject={handleViewProject}
+            onStartNewProject={handleStartNewProject}
           />
         </div>
         <div className="basis-2/5">
           <Content
-            handleSave={addNewProject}
-            handleCancel={handleCancel}
-            handleStartNewProject={handleStartNewProject}
-            handleDeleteProject={handleDeleteProject}
+            onAddProject={handleAddNewProject}
+            onCancel={handleCancel}
+            onStartNewProject={handleStartNewProject}
+            onDeleteProject={handleDeleteProject}
             manageTask={manageTask}
             contentView={contentView}
             chosenProject={chosenProject}
@@ -90,7 +90,7 @@ function App() {
       <div className="flex flex-row justify-center mt-6">
         <h1 className="text-center basis-3/5 py-2 bg-stone-900 text-stone-200 rounded-3xl">Made {new Date().getFullYear()} by Filip</h1>
       </div>
-    </div>
+    </main>
   );
 }
 

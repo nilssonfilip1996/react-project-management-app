@@ -2,7 +2,7 @@ import { useRef } from "react";
 import Tasks from "./Tasks"
 import DeleteModal from "./DeleteModal"
 
-export default function ProjectDetail({project, handleDeleteProject, manageTask}) {
+export default function ProjectDetail({project, onDeleteProject, manageTask}) {
     const dialog = useRef();
 
     function formatManageTask(taskName, operation) {    
@@ -11,7 +11,7 @@ export default function ProjectDetail({project, handleDeleteProject, manageTask}
 
     return (
         <div className="">
-            <DeleteModal ref={dialog} projectName={project.title} handleDelete={() => handleDeleteProject(project.title)}/>
+            <DeleteModal ref={dialog} projectName={project.title} handleDelete={() => onDeleteProject(project.title)}/>
             <div className="flex flex-col gap-4">
                 <div className="flex flex-row justify-between align-middle">
                     <h1 className="font-semibold text-4xl text-stone-600">{project.title}</h1>
