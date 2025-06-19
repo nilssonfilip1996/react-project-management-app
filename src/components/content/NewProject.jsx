@@ -1,7 +1,11 @@
 
 export default function NewProject({onCancel, onAddProject}) {
     function handleSubmit(formData) {
-        const formattedFormData = {title: formData.get("title"), description: formData.get("description"), dueDate: formData.get("dueDate")};
+        const formattedFormData = {
+            title: formData.get("title"),
+            description: formData.get("description"),
+            dueDate: formData.get("dueDate")
+        };
         onAddProject(formattedFormData);
     }
     return (
@@ -19,3 +23,4 @@ export default function NewProject({onCancel, onAddProject}) {
         </form>
     )
 }
+

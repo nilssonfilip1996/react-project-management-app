@@ -48,6 +48,7 @@ export default function Tasks({taskList, manageTask}) {
                 <div className="text-red-400" hidden={showError?false:true}>Task can't be empty.</div>
             </div>
             {taskList.length>0 && createTaskList()}
+            {taskList.length===0 && <p className="text-stone-600">This project does not have any tasks yet.</p>}
         </div>
     )
 }

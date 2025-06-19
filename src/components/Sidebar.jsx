@@ -5,10 +5,10 @@ export default function Sidebar({ projectNames, chosenProjectTitle, onViewProjec
 
   function createProjectList() {
     return (
-      <ul>
+      <ul className="my-4">
         {projectNames.map((projectName) => (
-          <li key={projectName} className={projectName===chosenProjectTitle?"mb-4 border-x-4 px-2":"mb-4"}>
-            <button className="hover:bg-stone-600 rounded-lg px-2" onClick={handleClick}>
+          <li key={projectName} className={projectName===chosenProjectTitle?"mb-4 border-x-4 px-2":"mb-4"}> 
+            <button className="w-full hover:bg-stone-600 rounded-lg px-2" onClick={handleClick}>
               {projectName}
             </button>
           </li>
