@@ -1,8 +1,12 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 
 export default function Tasks({taskList, manageTask}) {
     const [inputValue, setInputValue] = useState("");
     const [showError, setShowError] = useState(false);
+
+    function handleInputChange(e) {
+        setInputValue(e.target.value);
+    }
 
     function handleSubmitNewTask() {
         if(inputValue.length===0){
@@ -12,10 +16,6 @@ export default function Tasks({taskList, manageTask}) {
             setInputValue("");
             manageTask(inputValue, "add");
         }
-    }
-
-    function handleInputChange(e) {
-        setInputValue(e.target.value);
     }
 
     function handleDeleteTask(taskName) {

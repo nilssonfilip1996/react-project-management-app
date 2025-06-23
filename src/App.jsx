@@ -26,9 +26,6 @@ function App() {
     setChosenProject(projects[projectName]);
     setContentView("viewProject");
   }
-  {
-    chosenProject && console.log(`Chosen project: ${chosenProject.title}`);
-  }
 
   function handleCancel() {
     setChosenProject(null);

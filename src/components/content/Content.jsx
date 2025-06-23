@@ -4,9 +4,6 @@ import ProjectDetail from "./projectDetail/ProjectDetail";
 
 
 export default function Content({onAddProject, onCancel, onStartNewProject, onDeleteProject, manageTask, contentView, chosenProject}) {
-    console.log(contentView);
-    
-    console.log("rerender");
     
     function getView() {
         switch (contentView) {
@@ -20,8 +17,6 @@ export default function Content({onAddProject, onCancel, onStartNewProject, onDe
                 return <div><p>Error</p></div>;
         }
     }
-    
-    //const view = getView();
 
     return (
         <div className="p-6">
